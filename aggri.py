@@ -11,8 +11,10 @@ if a == "statistics":
     col1.write("crops")
     col2.write("seasons")
     col1 = st.chat_input("enter you crop here")
-    col2 = st.chat_input("enter your season")
-    if col1 == "Wheat"
+    col2 = st.chat_input("enter your soil type")
+    if col1 == "Wheat" and col2 == "clay":
+        print("")
+
 
 elif a == "crops data":
     st.title("Crops DATA")

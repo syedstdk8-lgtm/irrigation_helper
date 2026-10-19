@@ -7,5 +7,5 @@ st.image("C:/Users/syeds/OneDrive/Pictures/rpo/aggri.avif")
 
 tab1 = st.sidebar.radio("MENU :", [ "statistics", "crops data" ])
 
-tab1["crops data"] = st.title("crops data")
+
 

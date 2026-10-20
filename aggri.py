@@ -293,10 +293,29 @@ if a == "Statistics":
         m1.metric("Water Need", f"{water_req} L/m²")
         m2.metric("Irrigation Urgency", urgency)
         m3.metric("Estimated Growth Rate", f"{growth}%")
+
+        field_metrics = pd.DataFrame(
+            {
+            "Metric": [
+                "Soil Moisture (%)",
+                "Ambient Temp (°C)",
+                "Humidity (%)",
+                "Water Need (L/m²)",
+            ],
+            "Value": [
+                matched["Soil_Moisture_%"].iloc[0],
+                matched["Ambient_Temp_C"].iloc[0],
+                matched["Humidity_%"].iloc[0],
+                matched["Water_Need_L_m2"].iloc[0],
+            ]
+        }).set_index("Metric")
+                 
+        st.line_chart(field_metrics)
+
     else:
-        st.warning(
-            f"No exact baseline for {selected_crop} in {selected_season} season."
-        )
+
+        st.warning("no crop data was found on this specific season please change the season ")
+    
 
 
 
@@ -541,5 +560,3 @@ elif a == "crops data":
     df = pd.DataFrame(data)
 
     st.table(df)
-
-
